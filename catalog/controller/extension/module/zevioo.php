@@ -56,7 +56,7 @@ class ControllerExtensionModuleZevioo extends Controller
 			$log->write('Order info: ' . print_r($order, true));
 			
 			$first_name = $order['payment_firstname'];
-        	$last_name 	= $order['payment_lastname'];
+        	$last_name 	= substr($order['payment_lastname'],0,1);
         	$email 		= $order['email'];
 			
 			$products = $this->model_checkout_order->getOrderProducts($order_id);
